@@ -1469,6 +1469,23 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Converts RGBA color values to its bytes.
+        /// </summary>
+        /// <param name="rgba">Color value to convert.</param>
+        /// <param name="r">The red component as a byte.</param>
+        /// <param name="g">The green component as a byte.</param>
+        /// <param name="b">The blue component as a byte.</param>
+        /// <param name="a">The alpha component as a byte.</param>
+        [Pure]
+        public static void ToBytes(Color4 rgba, out byte r, out byte g, out byte b, out byte a)
+        {
+            r = (byte)Math.Round(rgba.R * byte.MaxValue);
+            g = (byte)Math.Round(rgba.G * byte.MaxValue);
+            b = (byte)Math.Round(rgba.B * byte.MaxValue);
+            a = (byte)Math.Round(rgba.A * byte.MaxValue);
+        }
+
+        /// <summary>
         /// Compares whether this Color4 structure is equal to the specified Color4.
         /// </summary>
         /// <param name="other">The Color4 structure to compare to.</param>

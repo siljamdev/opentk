@@ -311,6 +311,29 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Creates a translation matrix.
+        /// </summary>
+        /// <param name="x">X translation.</param>
+        /// <param name="result">The resulting Matrix2 instance.</param>
+        public static void CreateTranslation(float x, out Matrix2 result)
+        {
+            result = Identity;
+            result.Row1.X = x;
+        }
+
+        /// <summary>
+        /// Creates a translation matrix.
+        /// </summary>
+        /// <param name="x">X translation.</param>
+        /// <returns>The resulting Matrix3 instance.</returns>
+        [Pure]
+        public static Matrix2 CreateTranslation(float x)
+        {
+            CreateTranslation(x, out Matrix2 result);
+            return result;
+        }
+
+        /// <summary>
         /// Creates a scale matrix.
         /// </summary>
         /// <param name="scale">Single scale factor for the x, y, and z axes.</param>

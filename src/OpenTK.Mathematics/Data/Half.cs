@@ -384,11 +384,23 @@ namespace OpenTK.Mathematics
             return h.ToSingle();
         }
 
+        /// <summary>
+        /// Compares the specified OpenTK.Half objects for equality.
+        /// </summary>
+        /// <param name="left">The left-hand side OpenTK.Half object of the comparison.</param>
+        /// <param name="right">The right-hand side OpenTK.Half object of the comparison.</param>
+        /// <returns>True if left is equal to right; false otherwise.</returns>
         public static bool operator ==(Half left, Half right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Compares the specified OpenTK.Half objects for inequality.
+        /// </summary>
+        /// <param name="left">The left-hand side OpenTK.Half object of the comparison.</param>
+        /// <param name="right">The right-hand side OpenTK.Half object of the comparison.</param>
+        /// <returns>True if left is not equal to right; false otherwise.</returns>
         public static bool operator !=(Half left, Half right)
         {
             return !(left == right);

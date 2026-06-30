@@ -705,6 +705,54 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Creates a translation matrix.
+        /// </summary>
+        /// <param name="x">X translation.</param>
+        /// <param name="y">Y translation.</param>
+        /// <param name="result">The resulting Matrix3d instance.</param>
+        public static void CreateTranslation(double x, double y, out Matrix3d result)
+        {
+            result = Identity;
+            result.Row2 = new Vector3d(x, y, 1);
+        }
+
+        /// <summary>
+        /// Creates a translation matrix.
+        /// </summary>
+        /// <param name="vector">The translation vector.</param>
+        /// <param name="result">The resulting Matrix3d instance.</param>
+        public static void CreateTranslation(in Vector2d vector, out Matrix3d result)
+        {
+            result = Identity;
+            result.Row2 = new Vector3d(vector.X, vector.Y, 1);
+        }
+
+        /// <summary>
+        /// Creates a translation matrix.
+        /// </summary>
+        /// <param name="x">X translation.</param>
+        /// <param name="y">Y translation.</param>
+        /// <returns>The resulting Matrix3d instance.</returns>
+        [Pure]
+        public static Matrix3d CreateTranslation(double x, double y)
+        {
+            CreateTranslation(x, y, out Matrix3d result);
+            return result;
+        }
+
+        /// <summary>
+        /// Creates a translation matrix.
+        /// </summary>
+        /// <param name="vector">The translation vector.</param>
+        /// <returns>The resulting Matrix3d instance.</returns>
+        [Pure]
+        public static Matrix3d CreateTranslation(Vector2d vector)
+        {
+            CreateTranslation(vector.X, vector.Y, out Matrix3d result);
+            return result;
+        }
+
+        /// <summary>
         /// Creates a scale matrix.
         /// </summary>
         /// <param name="scale">Single scale factor for the x, y, and z axes.</param>

@@ -46,6 +46,14 @@ module Color4 =
             let rgb = Color4.FromHcy hcy
             Assert.ApproximatelyEquivalent(c, rgb, epsilon)
 
-            
+        [<Property>]
+        let ``RGB to bytes to RGB roundtrip`` (c : Color4) =
+            let mutable r = 0uy
+            let mutable g = 0uy
+            let mutable b = 0uy
+            let mutable a = 0uy
+            Color4.ToBytes(c, &r, &g, &b, &a)
+            let rgb = Color4(r, g, b, a)
+            Assert.ApproximatelyEquivalent(c, rgb, 0.5f/255f)
 
 
